@@ -1,4 +1,4 @@
-function Get-NOAAAlerts {
+function Get-NWSAlerts {
     [CmdletBinding(DefaultParameterSetName = "zone")]
     param (
         [Parameter(ValueFromPipelineByPropertyName, ParameterSetName = "zone")]
