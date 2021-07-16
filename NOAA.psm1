@@ -11,6 +11,7 @@ function Get-NOAAAlerts {
         switch ($PSBoundParameters.Keys) {
             "zone" {
                 foreach ($z in $zone) {
+                    $z = $z.toupper()
                     try {
                         (invoke-restmethod "https://api.weather.gov/alerts/active?zone=$z").features.properties
                     }
@@ -20,6 +21,7 @@ function Get-NOAAAlerts {
             }
             "state" {
                 foreach ($s in $State) {
+                $s = $s.toupper
                     try {
                         (invoke-restmethod "https://api.weather.gov/alerts/active?area=$s").features.properties
                     }
